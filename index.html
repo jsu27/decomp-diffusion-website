@@ -1,0 +1,877 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<!---
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+--->
+<script src="load-mathjax.js" async></script>
+
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+
+.move-down {
+    margin-top:1.2cm;
+}
+
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+	text-align: left;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.center {
+  margin-left: 10.0%;
+  margin-right: 10.0%;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.column10 {
+  text-align: center;
+  float: left;
+  width: 10%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+.row-center {
+    margin: 16px 0px 16px 0px;
+    text-align: center;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> Unsupervised Compositional Image Decomposition with Diffusion Models</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="Unsupervised Compositional Image Decomposition with Diffusion Models"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@du_yilun">
+        <meta name="twitter:title" content="Unsupervised Compositional Image Decomposition with Diffusion Models">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        Unsupervised Compositional Image Decomposition with Diffusion Models
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a href="">Jocelin Su<sup>1</sup></a>,
+                <a href="https://yilundu.github.io/">Yilun Du<sup>1</sup></a>,
+                <a href="">Nan Liu<sup>2</sup></a>,
+                <a href="https://scholar.google.com/citations?user=rRJ9wTJMUB8C&hl=en">Joshua B. Tenenbaum<sup>1</sup></a>
+                <!-- <a href="https://benanne.github.io/about/">Sander Dieleman<sup>2</sup></a>,
+                <a href="https://scholar.google.com/citations?user=GgQ9GEkAAAAJ&hl=en">Rob Fergus<sup>2</sup></a>,
+                <a href="http://www.sohldickstein.com/">Jascha Sohl-Dickstein<sup>3</sup></a>,
+                <a href="https://www.stats.ox.ac.uk/~doucet/">Arnaud Doucet<sup>2</sup></a>,
+                <a href="http://www.cs.toronto.edu/~wgrathwohl/">Will Grathwohl<sup>2</sup></a> -->
+            </div>
+        </center>
+        <center>
+        <div class="affiliations">
+            <span><sup>1</sup> MIT</span>
+            <span><sup>2</sup> UIUC</span>
+            <!-- <span><sup>3</sup> Google Brain</span>
+            <span><sup>4</sup> INRIA</span><br/> -->
+        </div>
+<!-- 
+        <div class="affil-row">
+            <div class="venue text-center"><b>ICML 2023 </b></div>
+        </div> -->
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/abs/2302.11552">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <a class="paper-btn" href="https://colab.research.google.com/drive/1jvlzWMc6oo-TH1fYMl6hsOYfrcQj2rEs?usp=sharing">
+                <span class="material-icons"> code </span> 
+                 Colab
+            </a>
+            <a class="paper-btn" href="https://github.com/yilundu/reduce_reuse_recycle">
+                <span class="material-icons"> code </span>
+                Code
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="teaser-image">
+        <center>
+            <figure>
+                <video class="centered" width="80%" autoplay loop muted playsinline class="video-background " >
+                    <source src="materials/teaser.m4v" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+
+        </center>
+    </section>
+    <section id="teaser-image">
+        <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/teaser.png"> 
+                </a>
+            </figure>
+
+        </center>
+    </section>
+
+    
+    <section id="abstract"/>
+        <hr>
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                Our visual understanding of the world is factorized and compositional. With just a single visual observation, we can deduce both global and local scene attributes, such as materials, weather, lighting, and underlying objects in the scene. These attributes are highly compositional and can be combined in various ways to create new representations of the world. This website introduces Decomp Diffusion, an unsupervised method for decomposing images into a set of underlying compositional factors, each represented by a different diffusion model. We demonstrate how each decomposed diffusion model captures a different factor of the scene, ranging from global scene descriptors (e.g. shadows, foreground, facial expression) to local scene descriptors (e.g. constituent objects). Furthermore, we show how these inferred factors can be flexibly composed and recombined both within and across different image datasets.
+            </p>
+        </div>
+    </section>
+
+
+    <section id="method"/>
+        <hr>
+
+        <h2>Method</h2>
+
+
+
+        <div class="flex-row">
+
+
+    <center>
+        <figure>
+            <a>
+                <img width="100%" src="materials/figures/model.png"> 
+            </a>
+            <p class="caption">
+                We learn to decompose each input image into a set of denoising functions $\{\epsilon_\theta(x_i^t, t, | z_k)\}$ representing $K$ factors, which can be composed to reconstruct the input.               
+            </p> <br>
+        </figure>
+        </center>
+
+            <p> 
+
+                Decomp Diffusion is an unsupervised approach that discovers compositional concepts from images, which may be flexibly combined both within and across different image modalities.
+                In particular, it leverages the close connection between Energy-Based Models [ 36, 13 ] and diffusion models [ 46 , 26 ] to decompose a scene into a set of factors, each represented as separate diffusion models. Composition between factors is achieved by sampling images from a composed diffusion distribution [38, 17]. Similar to composition between energy functions, this composition operation allows individual factors to represent both global and local concepts and further enables the recombination of concepts across different models and datasets. However, unlike the underlying energy decomposition objective of COMET, Decomp Diffusion may directly be trained through denoising, a stable and less expensive learning objective, and leads to higher resolution images.
+                (See our paper for details on the relationship between energy-based models and diffusion models.)
+
+            </p>
+
+              <!-- <p>
+                Prior works on unsupervised compositional concept discovery may be divided into two separate categories. One focuses on discovering a global latent space which best describes the input space, with prior work in~\citep{preechakul2022diffusion} also exploring this global latent space on diffusion models. Our approach aims instead to decompose data into multiple different compositional vector spaces, which allow us to both compose multiple instances of one factor together, as well as compose factors across different datasets.
+
+An alternative approach is the field of unsupervised object discovery~\citep{burgess2019monet,greff2019multi,Eslami2016Attend, du2021unsupervised, locatello2020objectcentric, kipf2022conditional}, which seeks to decompose a scene into a set of different objects. represents a separate set of pixels in an image defined by a disjoint segmentation mask. Developed concurrently with our approach, Jiang \textit{et al.}~\citep{jiang2023objectcentric} proposes to decomposes images into a set of object-centric diffusion models. Separate from these works, our approach does not assume the explicit decomposition of images into segmented components, enabling the ability to represent both objects and global factors in a scene.
+            </p> -->
+
+
+
+            <h3>Formulation</h3>
+
+
+
+            <p>
+                <!-- In COMET, given an input image $\bm{x}_0$, we are interested in inferring a set of different latent energy functions $E_\theta(\bm{x}, \vz_k)$ such that
+%
+\begin{equation*}
+\bm{x}_0 = \argmin_\bm{x} \sum_k E_\theta(\bm{x}, \vz_k).
+\end{equation*}
+% -->
+Using the equivalence between denoising networks and energy functions, to recover the desired set of $K$ energy functions, we may learn a set of $K$ denoising functions to recover an image $\boldsymbol{x}_0$ using the objective
+
+\begin{equation}
+\label{eq:diffusion_loss}
+\mathcal{L}_{\text{MSE}}=\left\|\mathbf{\epsilon} - \sum_k \epsilon_\theta\left(\sqrt{1-\beta_t}\boldsymbol{x}_0 +  \sqrt{\beta_t} \mathbf{\epsilon}, t, \boldsymbol{z}_k\right)\right\|_2,
+\end{equation}
+
+where each individual latent $\boldsymbol{z}_k$ is inferred by a neural network encoder $\text{Enc}_\theta(\boldsymbol{x}_0)[k]$. 
+<!-- where each individual latent $\vz_k$ is inferred by a neural network encoder $\text{Enc}*\theta(\bm{x}_0)[k]$.  -->
+This resulting objective is simpler to train than that of COMET, as it requires only a single step denoising supervision and does not need computation of second-order gradients.
+            
+</p>
+            <!-- \def\vx{{\bm{x}}} -->
+
+        <p>
+        Once we have recovered these denoising functions, we may directly use the noisy optimization objective 
+
+        \begin{equation}
+        \boldsymbol{x}^{t-1}=\boldsymbol{x}^{t}-\gamma\epsilon_\theta(\boldsymbol{x}^t,t) + \xi, \quad \xi \sim \mathcal{N} \bigl(0, \sigma^2_t I \bigl)
+        \label{eq:unconditional_langevin}
+        \end{equation}
+
+            to sample from compositions of different factors.
+
+        </p>
+
+
+            <p>
+                Below, we present results illustrating our approach's ability to decompose scenes into both global concepts as well as local concepts. Additionally, we show that discovered concepts generalize well and can compose across different modalities of data. 
+            </p>
+        </div>
+    </section>
+
+
+
+
+        
+
+    <section id="results">
+        <!-- <hr>
+        <h2>Reconstruction Comparisons</h2>
+        <div class="flex-row">
+            <p>First, we show how our approach decomposes CelebA-HQ face images into a set of factors on the left-hand side. These factors include facial features, hair color, skin tone, and hair shape, each named based on qualitative visualization.
+            </p>
+        </div> 
+        <center>
+        <figure>
+            <a>
+                <img width="100%" src="materials/figures/global_factor_decomposition.png"> 
+            </a>
+            <p class="caption">
+                Our method can enable global factor decomposition and reconstruction on CelebA-HQ (Left) and Virtual KITTI 2 (Right). Note that we name inferred concepts for easy understanding.
+            </p> <br>
+        </figure>
+        </center> -->
+
+
+
+        <hr>
+        <h2>Global Factors</h2>
+        Given a set of input images, Decomp Diffusion can capture a set of global scene descriptors such as lighting and background, and recombine them to construct image variations.
+            <h3>Decomposition and Reconstruction</h3>  
+            <div class="flex-row">
+                <p>First, we show how our approach decomposes images into global factors in the below figure. On the left, our approach decomposes CelebA-HQ face images into a set of factors for facial features, hair color, skin tone, and hair shape, each named based on qualitative visualization.
+                    On the right, Decomp Diffusion infers factors such as shadow, lighting, landscape, and objects on Virtual KITTI $2$. We can further compose these factors to reconstruct the input images, as illustrated in the rightmost column.
+
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/global_factor_decomposition.png"> 
+                </a>
+                <p class="caption">
+                    Our method can enable global factor decomposition and reconstruction on CelebA-HQ (Left) and Virtual KITTI 2 (Right). Note that we name inferred concepts for easy understanding.
+                </p> <br>
+            </figure>
+            </center>
+
+            <h3>Recombination</h3>  
+            <div class="flex-row">
+                <p>
+                    Our approach can also recombine factors from the Falcor3D and CelebA-HQ datasets to produce new images. On the left, we produce variations on a source image from Falcor3D by varying a target factor, such as lighting intensity, while preserving its other factors. In this way, we generate image variations on inferred factors of lighting intensity, camera position, and lighting position.
+                    On the right, we show how factors extracted from different human faces can be recombined to generate a novel human face with those selected factors. For instance, we can combine facial features from one person with hair shape from another to create a new face that exhibits those properties. 
+
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/global_factor_recombination.png"> 
+                </a>
+                <p class="caption">
+                    Recombination of inferred factors on Falcor3D and CelebA-HQ datasets. In Falcor3D (Left), we present image variations from varying inferred factors such as lighting intensity. In CelebA-HQ (Right), we recombine factors from two different inputs to generate novel face combinations.
+                </p> <br>
+            </figure>
+            </center>
+
+        <hr>
+
+        <h2>Local Factors</h2>
+        Given an input image with multiple objects, e.g., a purple cylinder and a green cube, Decomp Diffusion can decompose the input image into individual object components using object-level segmentation.            
+            <h3>Decomposition and Reconstruction</h3>  
+            <div class="flex-row">
+                <p>
+                    Below, we perform local factor decomposition on object datasets such as CLEVR and Tetris. Given an image with multiple objects, our method can isolate each individual object component, e.g. geometric solids or tetromino blocks, and accurately reconstruct the input image using the set of decomposed object factors.
+
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/local_factor_decomposition.png"> 
+                </a>
+                <p class="caption">
+                    Illustration of object-level decomposition on CLEVR (left) and Tetris (right). Our method can extract individual object components that can be reused for image reconstruction.                </p> <br>
+            </figure>
+            </center>
+
+            <h3>Recombination</h3>  
+            <div class="flex-row">
+                <p>
+                    Our method can also recombine local factors from different inputs to generate new image combinations. On the left side, factorized energy functions representing individual object components from two inputs, shown within bounding boxes, are combined to form novel object combinations on both the CLEVR and Tetris datasets. On the right, our method recombines all existing local components from two CLEVR images to form an image with $8$ objects, even though each training image only consists of $4$ objects. Thus, our method generalizes well to novel combinations of additional object components.
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/local_factor_recombination.png"> 
+                </a>
+                <p class="caption">
+                    We recombine local factors from 2 images to generate composition of inferred object factors. On both CLEVR and Tetris (Left), we recombine inferred object components in the bounding box to generate novel object compositions. On CLEVR (Right), we compose all inferred factors to generalize up to 8 objects, though training images only contain 4 objetcs.                </p> <br>
+            </figure>
+            </center>
+
+        <hr>
+
+
+        <h2>Cross-Dataset</h2>
+        Finally, we show how Decomp Diffusion can extract and combine concepts across multiple datasets. We demonstrate the recombination of factors in multi-modal datasets, and the combination of factors from distinct models trained on different datasets. 
+
+            <h3>Decomposition and Reconstruction</h3>  
+            <div class="flex-row">
+                <p>
+                    Multi-modal datasets pose a challenge for factor extraction because they contain images of different dataset types. However, as shown below, our method successfully performs this task. On the left, Decomp Diffusion decomposes images from a hybrid dataset of KITTI and Virtual KITTI into a set of global factors, such as background, lighting, and shadows. On the right, on a hybrid dataset of CelebA-HQ and Anime faces, our method decomposes the two types of faces into a cohesive set of global factors including face shape, hair shape, hair color, and facial details.
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/multi_modal_decomposition.png"> 
+                </a>
+                <p class="caption">
+                    We show our method can capture a set of global factors that are shared between hybrid datasets such as KITTI and Virtual KITTI 2 scenes (Left), and CelebA-HQ and Anime faces (Right). Inferred concepts are named for better understanding.                </p> <br>
+            </figure>
+            </center>
+
+            <h3>Multi-Modal Recombination</h3>  
+            <div class="flex-row">
+                <p>
+                    Next, in the below figure, we demonstrate Decomp Diffusion's ability to recombine obtained factors across multi-modal datasets. On the top half, for the hybrid KITTI and Virtual KITTI dataset, we recombine extracted factors from a KITTI image and Virtual KITTI image to produce novel road scenes. For instance, we can incorporate a blue sky background from one image with shadows in the foreground from another image. In the bottom half, Decomp Diffusion can reuse and combine concepts from a hybrid CelebA-HQ and Anime dataset to generate unique anime-like faces. Specifically, we combine hair shapes and colors from a CelebA-HQ human face image with face shape and facial features from an Anime face image, resulting in novel anime-like faces.   
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/multi_modal_recombination.png"> 
+                </a>
+                <p class="caption">
+                    Our method exhibits the ability to recombine inferred factors from various hybrid datasets. We can recombine different extracted factors to generate unique compositions of KITTI and Virtual KITTI 2 scenes (Top), and compositions of CelebA-HQ and Anime faces (Bottom).
+                </p> <br>
+            </figure>
+            </center>
+
+            <h3>Cross-Dataset Recombination</h3>  
+            <div class="flex-row">
+                <p>
+                    Given two distinct models, one trained on CLEVR images and the other trained on CLEVR Toy images, our approach can combine local factors extracted from different modalities to generate novel combinations. Below, our method can extract object components from two images from different datasets, shown in bounding boxes, and then combine them to generate unseen combinations of object components.
+                </p>
+            </div> 
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="materials/figures/cross_dataset_recombination.png"> 
+                </a>
+                <p class="caption">
+                    Our method can recombine factors across 2 different models that trained on CLEVR and CLEVR Toy, respectively. We compose inferred factors as shown in the bounding box from two different modalites to generate unseen compositions.                </p> <br>
+            </figure>
+            </center>
+
+
+
+            
+
+    </section> 
+
+
+
+
+    <section id="related_projects">
+        <hr>
+        <h2>Related Projects</h2>  
+
+          <br>
+          Check out a list of our related papers on compositional generation and energy based models. A full list can be found <a href="https://energy-based-model.github.io/Energy-based-Model-MIT/">here</a>!
+          <br>
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                <source src="materials/related/teaser_glide.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+            <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">Compositional Visual Generation with Composable Diffusion Models</a>
+        </div>
+        <div>
+            We present a method to compose different diffusion models together, drawing on the close connection of
+            diffusion models with EBMs. We illustrate how compositional operators enable
+            the ability to composing multiple sets of objects together as well as generate images subject to 
+            complex text prompts.
+        </div>
+        </div>
+        </div>
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <div class="move-down">
+                <img src="materials/related/comp_cartoon.png" class="img-fluid" alt="comp_carton" style="width:100%">
+            </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+            <a href="https://energy-based-model.github.io/compositional-generation-inference/">Compositional Visual Generation with Energy Based Models</a>
+        </div>
+        <div>
+            We present a set of compositional operators that enable EBMs to exhibit <b>zero-shot compositional</b> visual generation, enabling us to compose visual concepts
+            (through operators of conjunction, disjunction, or negation) together in a zero-shot manner.
+            Our approach enables us to generate faces given a  description
+            ((Smiling AND Female) OR (NOT Smiling AND Male)) or to combine several different objects together.
+        </div>
+        </div>
+        </div>
+
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                <source src="materials/related/half.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+                        <a href="https://openai.com/blog/energy-based-models/">Implicit Generation and Generalization with Energy Based Models</a>
+        </div>
+                We introduce a method to scale EBM training to generate high resolution images.
+                We propose to utilize Langevin dynamics, initialized from random noise, to iteratively
+                refine and denoise image samples. We further demonstrate unique properties of EBMs
+                such as compositionality, continual learning, and robustness.
+        <div>
+        </div>
+        </div>
+
+    </section> 
+
+
+    <section id="paper">
+        <h2>Team</h2>        
+        <div class="row">
+            <div class="column5">
+                <a href=''>
+                    <img  src='' class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Jocelin Su </p>
+                <p class=institution>MIT</p>
+            </div>
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/yilun3.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Yilun Du </p>
+                <p class=institution>MIT</p>
+            </div>
+
+            
+
+            <div class="column5">
+                <a href=''>
+                    <img  src='' class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Nan Liu</p>
+                <p class=institution>UIUC</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://scholar.google.com/citations?user=rRJ9wTJMUB8C&hl=en'>
+                    <img  src=./materials/people/josh2.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Joshua Tenenbaum </p>
+                <p class=institution>MIT</p>
+            </div>
+
+         </div>
+    </section>
+   
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+        <center><p><a href='https://accessibility.mit.edu/'><b>Accessibility</b></a></p></center>
+    </section>
+    
+
+
+</div>
+</body>
+</html>
